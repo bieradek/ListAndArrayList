@@ -14,7 +14,6 @@ public class Main {
             System.out.println("Enter your choice: ");
             choice = scanner.nextInt();
             scanner.nextLine();
-
             switch (choice) {
                 case 0: //0 - To print choice options.
                     printInstructions();
@@ -36,6 +35,9 @@ public class Main {
                     break;
                 case 6: //6 - To quit the application.
                     quit = true;
+                    break;
+                default:
+                    System.out.println("Invalid number, try again");
                     break;
             }
         }
@@ -61,7 +63,7 @@ public class Main {
         System.out.println("enter item number");
         int itemNo = scanner.nextInt();
         scanner.nextLine();
-        System.out.print("entwer replacement item");
+        System.out.println("Enter replacement item");
         String newItem = scanner.nextLine();
         groceryList.modifyGroceryItem(itemNo - 1, newItem);
     }
@@ -70,7 +72,7 @@ public class Main {
         System.out.println("enter item number");
         int itemNo = scanner.nextInt();
         scanner.nextLine();
-        groceryList.removeGroceryItem(itemNo);
+        groceryList.removeGroceryItem(itemNo - 1);
     }
 
     public static void searchForItem() {

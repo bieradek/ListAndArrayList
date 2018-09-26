@@ -33,7 +33,9 @@ public class Main {
                 case 5: //5 - To search for an item in the list
                     searchForItem();
                     break;
-                case 6: //6 - To quit the application.
+                case 6:
+                    processArrayList();
+                case 7: //6 - To quit the application.
                     quit = true;
                     break;
                 default:
@@ -60,7 +62,7 @@ public class Main {
     }
 
     public static void modifyItem() {
-        System.out.println("Current item number");
+        System.out.println("Current item");
         String itemNo = scanner.nextLine();
         System.out.println("Enter replacement item");
         String newItem = scanner.nextLine();
@@ -77,7 +79,7 @@ public class Main {
     public static void searchForItem() {
         System.out.print("Item to search for: ");
         String searchItem = scanner.nextLine();
-        if (groceryList.findItem(searchItem) != null) {
+        if (groceryList.onFile(searchItem)) {
             System.out.println("Found " + searchItem + " in our grocery list");
         } else {
             System.out.println(searchItem + " is not in the list");

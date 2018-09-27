@@ -35,6 +35,7 @@ public class Main {
                     break;
                 case 6:
                     processArrayList();
+                    break;
                 case 7: //6 - To quit the application.
                     quit = true;
                     break;

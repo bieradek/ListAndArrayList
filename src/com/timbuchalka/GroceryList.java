@@ -1,6 +1,5 @@
 package com.timbuchalka;
 
-import java.sql.Struct;
 import java.util.ArrayList;
 
 public class GroceryList {
@@ -8,10 +7,6 @@ public class GroceryList {
 
     public void addGroceryItem(String item) {
         groceryList.add(item);
-    }
-
-    public ArrayList<String> getGroceryList() {
-        return groceryList;
     }
 
     public void printGroceryList() {
@@ -56,9 +51,15 @@ public class GroceryList {
         return false;
     }
 
-    public static void processArrayList() {
+    public ArrayList<String> getGroceryList() {
+        return groceryList;
+    }
+
+    public void processArrayList() {
         ArrayList<String> newArray = new ArrayList<String>();
-        newArray.addAll(GroceryList.getGroceryList());
+        newArray.addAll(groceryList.getGroceryList());
+
+        ArrayList<String> nextArray = new ArrayList<String>(groceryList.getGroceryList());
     }
 
 //    public String findItem(String searchItem) {
@@ -68,14 +69,13 @@ public class GroceryList {
 //        } else {
 //            return "Couldn't find";
 //        }
-
 //    }
+
 //    public String findItem(String searchItem) {
 //        int position = groceryList.indexOf(searchItem);
 //        if (position >= 0) {
 //            return groceryList.get(position);
 //        }
 //        return null;
-
 //    }
 }
